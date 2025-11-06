@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavuk Games</title>
+    
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN --><script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Inter font'unu varsayılan yap */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Hafif bir arka plan rengi */
+        }
+        
+        /* Kahraman (Hero) bölümü için özel gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
+
+        /* Kartların üzerine gelince hafifçe büyüme efekti */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigasyon Menüsü --><header class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo - Kavuk Games --><a href="#" class="text-3xl font-bold text-indigo-600 flex items-center space-x-2">
+                <img src="images/kavuk-games-logo.png" alt="Kavuk Games Logo" class="h-10 w-auto">
+            </a>
+            
+            <!-- Mobil Menü Butonu --><button id="mobile-menu-button" class="md:hidden p-2 text-gray-700 rounded-lg hover:bg-gray-100">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Masaüstü Menü --><div class="hidden md:flex items-center space-x-6">
+                <a href="#hakkimizda" class="text-gray-600 hover:text-indigo-600 font-medium">Hakkımızda</a>
+                <a href="#oyunlar" class="text-gray-600 hover:text-indigo-600 font-medium">Oyunlar</a>
+                <a href="#ekip" class="text-gray-600 hover:text-indigo-600 font-medium">Ekip</a>
+                <a href="#iletisim" class="bg-indigo-600 text-white px-4 py-2 rounded-full font-medium hover:bg-indigo-700 transition-colors">Bize Ulaşın</a>
+            </div>
+        </nav>
+
+        <!-- Mobil Menü (Gizli) --><div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t">
+            <a href="#hakkimizda" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 font-medium">Hakkımızda</a>
+            <a href="#oyunlar" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 font-medium">Oyunlar</a>
+            <a href="#ekip" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 font-medium">Ekip</a>
+            <a href="#iletisim" class="block px-6 py-3 m-4 bg-indigo-600 text-white rounded-full font-medium text-center hover:bg-indigo-700 transition-colors">Bize Ulaşın</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bölüm 1: Şirket Hakkında (Hero) --><section id="hakkimizda" class="hero-gradient text-white pt-24 pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Kavuktan <span class="text-yellow-300">Tavşan</span> Çıkarıyoruz
+                </h1>
+                <br>
+                <a href="#oyunlar" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 shadow-lg transition-transform hover:scale-105">
+                    Oyunlarımızı Keşfet
+                </a>
+            </div>
+        </section>
+
+        <!-- Bölüm 2: Geliştirilen Oyunlar --><section id="oyunlar" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Oyunlarımız</h2>
+                <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
+                    İşte listelerde yükselen, eğlence dolu oyunlarımızdan bazıları.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Oyun Kartı 1 --><div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/ibu.png" alt="Ibu Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Ibu</h3>
+                            <p class="text-gray-600 mb-5">
+                                Matematik becerilerinizi test edin ve zorlu seviyelerde ilerleyin. Sayıları topla, çıkar, çarp ve böl!
+                            </p>
+                            <div class="mb-5">
+                                <span class="inline-block bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Android</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oyun Kartı 2 --><div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/tavukfirarda.jpg" alt="Tavuk Firarda Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Tavuk Firarda</h3>
+                            <p class="text-gray-600 mb-5">
+                                Amansız trafikte tavukları güvenli bir şekilde karşıya geçirin. Hızlı refleksler gerektirir.
+                            </p>
+                            <div class="mb-5">
+                                <span class="inline-block bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Android</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oyun Kartı 3 --><div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/frogfeeder.png" alt="Frog Feeder Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Frog Feeder</h3>
+                            <p class="text-gray-600 mb-5">
+                                Kurbağalara uygun renklredeki böğürtlenleri yedirin ve puan kazanın!
+                            </p>
+                            <div class="mb-5">
+                                 <span class="inline-block bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Android</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Oyun Kartı 4 -->
+                      <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/misterkarpuz.png" alt="Mr.Karpuz Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Mr.Karpuz</h3>
+                            <p class="text-gray-600 mb-5">
+                                Karpuz bey ile engelleri aşın ve en yüksek puanı kazanın! 
+                            </p>
+                            <div class="mb-5">
+                                 <span class="inline-block bg-green-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Android</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Oyun Kartı 5 -->
+                      <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/2048.png" alt="2048 Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">2048</h3>
+                            <p class="text-gray-600 mb-5">
+                                2048 sayısına ulaşmak için aynı sayıları birleştirin ve stratejinizi konuşturun!
+                            </p>
+                            <div class="mb-5">
+                                <span class="inline-block bg-blue-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Web</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- Oyun Kartı 6 -->
+                      <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                        <img src="images/FireFighter.jpg" alt="Fire Fighters Oyun Görseli" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Fire Fighters</h3>
+                            <p class="text-gray-600 mb-5">
+                               Yapay zekaya karşı yangınları söndürmek için stratejik hamleler yapın ve ekibinizi yönlendirin!
+                            </p>
+                            <div class="mb-5">
+                                <span class="inline-block bg-blue-100 text-green-800 text-sm font-medium mr-2 px-3 py-1 rounded-full">Web</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase mb-2">Teknolojiler</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">Unity</span>
+                                    <span class="bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full">C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Bölüm 3: Ekip --><section id="ekip" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Ekibimiz</h2>
+                <p class="text-center text-gray-600 text-lg mb-16 max-w-2xl mx-auto">
+                    Bu eğlenceli oyunların arkasındaki yetenekli ve tutkulu insanlar.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center justify-center">                    
+                    <!-- Ekip Üyesi 1 --><div class="bg-white rounded-2xl shadow-lg p-6 text-center card-hover">
+                        <img src="images/AA.png" alt="Ahmet Akkuş Profil Resmi" class="w-32 h-32 rounded-full mx-auto mb-5 border-4 border-indigo-200">
+                        <h4 class="text-xl font-bold text-gray-900">Ahmet Akkuş</h4>
+                        <p class="text-indigo-600 font-medium mb-3">Game Developer</p>
+                        
+                        <div class="flex flex-wrap justify-center gap-2 mb-5">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">Unity</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">C#</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">Blender</span>
+                        </div>
+
+                        <div class="flex justify-center space-x-4 text-gray-500">
+                            <a href="mailto:ahmedakkus.42@gmail.com" class="hover:text-indigo-600">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://github.com/WBCahmet" class="hover:text-indigo-600">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ahmetakkus42/" class="hover:text-indigo-600">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Ekip Üyesi 2 --><div class="bg-white rounded-2xl shadow-lg p-6 text-center card-hover">
+                        <img src="images/IU.png" alt="İbrahim Üstün Profil Resmi" class="w-32 h-32 rounded-full mx-auto mb-5 border-4 border-cyan-200">
+                        <h4 class="text-xl font-bold text-gray-900">İbrahim Üstün</h4>
+                        <p class="text-cyan-600 font-medium mb-3">Game Developer</p>
+                        
+                        <div class="flex flex-wrap justify-center gap-2 mb-5">
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-1 rounded-full">Unity</span>
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-1 rounded-full">C#</span>
+                            <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-1 rounded-full">Mixamo</span>
+                        </div>
+
+                        <div class="flex justify-center space-x-4 text-gray-500">
+                            <a href="mailto:ustunibrahim32@gmail.com" class="hover:text-cyan-600">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://github.com/ibrahimustun" class="hover:text-cyan-600">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/ibrahimustun" class="hover:text-cyan-600">
+                                <i data-lucide="linkedin" class="w-6 h-6"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg font-bold text-white mb-2">Kavuk Games</p>
+            <p>&copy; 2025 Kavuk Games. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide ikonlarını etkinleştir
+        lucide.createIcons();
+
+        // Mobil Menü Tıklama Olayı
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuButton.querySelector('i');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            
+            // İkonu değiştir (Menu <-> X)
+            const isHidden = mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons(); // İkonu yeniden çiz
+        });
+
+        // Mobil menüdeki linklere tıklayınca menüyü kapat
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+    </script>
+</body>
+</html>
